@@ -1,0 +1,30 @@
+{
+  "name": "eslint-config-envylabs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
+  },
+  "type": "module",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "ecmascript",
+    "eslint",
+    "eslintconfig",
+    "lint",
+    "config",
+    "prettier",
+    "envylabs"
+  ],
+  "author": "Envy Labs (envylabs.com)",
+  "license": "MIT",
+  "description": "Shared ESLint configuration for Envy Labs projects",
+  "dependencies": {
+    "@eslint/js": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.1",
+    "typescript-eslint": "^8.33.1"
+  }
+}
