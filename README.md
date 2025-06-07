@@ -45,4 +45,6 @@ export default [
 - Lints JavaScript using [
   `eslint:recommended`](https://eslint.org/docs/latest/user-guide/configuring/configuration-files#using-eslintrecommended).
 - Additionally, lints TypeScript using [`@typescript-eslint/recommended`](https://typescript-eslint.io/docs/linting/configs).
+- Lints code formatting using [`eslint-plugin-prettier`](https://github.com/prettier/eslint-plugin-prettier).
+- Lints imports using [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x).
 - Uses rules inside the [configs](configs) folder.
