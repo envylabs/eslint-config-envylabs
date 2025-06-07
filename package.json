@@ -23,7 +23,10 @@
   "description": "Shared ESLint configuration for Envy Labs projects",
   "dependencies": {
     "@eslint/js": "^9.28.0",
+    "@typescript-eslint/parser": "^8.33.1",
     "eslint-config-prettier": "^10.1.5",
+    "eslint-import-resolver-typescript": "^4.4.3",
+    "eslint-plugin-import-x": "^4.15.1",
     "eslint-plugin-prettier": "^5.4.1",
     "typescript-eslint": "^8.33.1"
   }
