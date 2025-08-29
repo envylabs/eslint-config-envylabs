@@ -5,11 +5,7 @@ on:
 
 permissions:
   contents: write
-  # The following is necessary for npm provenance generation. It's commented out
-  # because npm doesn't allow publishing provenance on private repositories. If
-  # we make this repository public, uncomment the following line and add the
-  # `--provenance` option to the `npm publish` step.
-  # id-token: write
+  id-token: write
   pull-requests: write
 
 name: release-please
@@ -33,7 +29,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - run: npm ci
         if: ${{ steps.release.outputs.release_created }}
-      - run: npm publish --access public
+      - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}
