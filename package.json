@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/envylabs/eslint-config-envylabs"
+    "url": "git+https://github.com/envylabs/eslint-config-envylabs"
   },
   "author": "Envy Labs (envylabs.com)",
   "license": "MIT",
