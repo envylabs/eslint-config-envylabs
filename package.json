@@ -18,6 +18,10 @@
     "prettier",
     "envylabs"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/envylabs/eslint-config-envylabs"
+  },
   "author": "Envy Labs (envylabs.com)",
   "license": "MIT",
   "description": "Shared ESLint configuration for Envy Labs projects",
