@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.0.0...v1.1.0) (2025-10-24)
+
+
+### Features
+
+* allow unused variables to be ignored with an underscore prefix ([0b7def1](https://github.com/envylabs/eslint-config-envylabs/commit/0b7def1898ca9ed908c0b7e1e4de8074682b6bf1))
+* disallow warning comments ([e6e3f5f](https://github.com/envylabs/eslint-config-envylabs/commit/e6e3f5fbe1e5e2812dd4d75df8bd7caceb01d7b2))
+* ensure switch statements are exhaustive ([955d4f7](https://github.com/envylabs/eslint-config-envylabs/commit/955d4f767687b1b446ad6c0692467be1913ae747))
+
 ## 1.0.0 (2025-08-29)
 
 
