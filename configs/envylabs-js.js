@@ -23,6 +23,7 @@ export default [
           "newlines-between": "always",
         },
       ],
+      "no-warning-comments": "warn",
       "prettier/prettier": "warn",
     },
   },
