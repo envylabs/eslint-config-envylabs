@@ -20,12 +20,6 @@ export default [
     },
     rules: {
       "@typescript-eslint/no-require-imports": "error",
-    },
-  },
-  {
-    files: ["**/*.ts"],
-    rules: {
-      "@typescript-eslint/explicit-module-boundary-types": "error",
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {
@@ -42,6 +36,12 @@ export default [
           requireDefaultForNonUnion: true,
         },
       ],
+    },
+  },
+  {
+    files: ["**/*.ts"],
+    rules: {
+      "@typescript-eslint/explicit-module-boundary-types": "error",
     },
   },
   {
