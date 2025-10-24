@@ -34,6 +34,14 @@ export default [
           varsIgnorePattern: "^_",
         },
       ],
+      "@typescript-eslint/switch-exhaustiveness-check": [
+        "error",
+        {
+          allowDefaultCaseForExhaustiveSwitch: true,
+          considerDefaultExhaustiveForUnions: true,
+          requireDefaultForNonUnion: true,
+        },
+      ],
     },
   },
   {
