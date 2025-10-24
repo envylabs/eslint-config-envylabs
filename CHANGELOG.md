@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/envylabs/eslint-config-envylabs/compare/v1.1.0...v1.1.1) (2025-10-24)
+
+
+### Bug Fixes
+
+* apply no-unused-vars and switch-exhaustiveness to tsx files, as well ([0bfd8f5](https://github.com/envylabs/eslint-config-envylabs/commit/0bfd8f5eb035db48da696c6b07ffdf1d9d3fa380))
+
 ## [1.1.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.0.0...v1.1.0) (2025-10-24)
 
 
