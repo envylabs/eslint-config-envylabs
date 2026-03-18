@@ -1,5 +1,6 @@
 import eslintPluginEnvylabs from "./envylabs-ts.js";
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   ...eslintPluginEnvylabs,
   {

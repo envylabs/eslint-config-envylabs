@@ -3,6 +3,7 @@ import { configs as tseslintConfigs } from "typescript-eslint";
 
 import eslintPluginEnvylabs from "./envylabs-js.js";
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   ...eslintPluginEnvylabs,
   ...tseslintConfigs.recommended,
@@ -41,6 +42,10 @@ export default [
   {
     files: ["**/*.ts"],
     rules: {
+      // Only enable @typescript-eslint/explicit-module-boundary-types in .ts
+      // files (not .tsx) because React component return types (e.g.
+      // JSX.Element) are verbose and almost always omitted in .tsx files.
+      // Enforcing this rule there would add friction without much benefit.
       "@typescript-eslint/explicit-module-boundary-types": "error",
     },
   },

@@ -1,3 +1,3 @@
 import eslintConfigEnvylabs from "./index.js";
 
-export default [...eslintConfigEnvylabs.full];
+export default [...eslintConfigEnvylabs.full, { ignores: ["test/fixtures/"] }];
