@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.1.1...v1.2.0) (2026-04-08)
+
+
+### Features
+
+* allow eslint v10 ([adc2340](https://github.com/envylabs/eslint-config-envylabs/commit/adc234021b783a50221fc3941c946467beb7c18e))
+
+
+### Bug Fixes
+
+* add eslint 9 to peerDependencies ([bd30f85](https://github.com/envylabs/eslint-config-envylabs/commit/bd30f85632ea94261d63b67ae856ae3f49fd58a8))
+
 ## [1.1.1](https://github.com/envylabs/eslint-config-envylabs/compare/v1.1.0...v1.1.1) (2025-10-24)
 
 
