@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/envylabs/eslint-config-envylabs/compare/v1.2.2...v1.2.3) (2026-04-10)
+
+
+### Bug Fixes
+
+* use NPM trusted publishing for deploy automation ([a3fc3ff](https://github.com/envylabs/eslint-config-envylabs/commit/a3fc3ff5a595d9aca9a2a307aca6bdbdebe03c3a))
+
 ## [1.2.2](https://github.com/envylabs/eslint-config-envylabs/compare/v1.2.1...v1.2.2) (2026-04-10)
 
 
