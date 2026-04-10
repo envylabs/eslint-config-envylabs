@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.4](https://github.com/envylabs/eslint-config-envylabs/compare/v1.2.3...v1.2.4) (2026-04-10)
+
+
+### Bug Fixes
+
+* allow @eslint/js at 9.x or 10.x to satisfy peer dependency update ([c6f7a4e](https://github.com/envylabs/eslint-config-envylabs/commit/c6f7a4e70653f77e92852efbb9efe97d83d7c283))
+
 ## [1.2.3](https://github.com/envylabs/eslint-config-envylabs/compare/v1.2.2...v1.2.3) (2026-04-10)
 
 
