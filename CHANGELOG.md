@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/envylabs/eslint-config-envylabs/compare/v1.2.0...v1.2.1) (2026-04-10)
+
+
+### Bug Fixes
+
+* rework deployment automation for releases ([f9122f7](https://github.com/envylabs/eslint-config-envylabs/commit/f9122f79720b580f7fd35395e91db5d5c53660ae))
+
 ## [1.2.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.1.1...v1.2.0) (2026-04-08)
 
 
