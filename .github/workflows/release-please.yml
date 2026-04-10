@@ -1,48 +1,45 @@
-on:
-  push:
-    branches:
-      - main
-
-permissions:
-  contents: write
-  id-token: write
-  pull-requests: write
-
-name: release-please
-
+---
 jobs:
-  ci:
-    runs-on: ubuntu-latest
+  deploy:
+    if: "${{ needs.release-please.outputs.release_created }}"
+    name: "Deploy"
+    needs:
+      - "release-please"
+    permissions:
+      contents: "read"
+      id-token: "write"
+    runs-on: "ubuntu-latest"
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: "actions/checkout@v6"
+      - uses: "actions/setup-node@v6"
         with:
-          cache: npm
-          node-version-file: .tool-versions
-      - run: npm ci
-      - run: npm run lint
-      - run: npm test
+          cache: "npm"
+          node-version-file: ".tool-versions"
+      - run: "npm ci --ignore-scripts --no-audit --no-fund --no-update-notifier"
+      - run: "npm publish --provenance --access public"
+        env:
+          NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
 
   release-please:
-    needs: ci
-    runs-on: ubuntu-latest
+    name: "Release"
+    outputs:
+      release_created: "${{ steps.release.outputs.release_created }}"
+      tag_name: "${{ steps.release.outputs.tag_name }}"
+    permissions:
+      contents: "write"
+      issues: "write"
+      pull-requests: "write"
+    runs-on: "ubuntu-latest"
     steps:
-      - uses: googleapis/release-please-action@v4
-        id: release
+      - id: "release"
+        uses: "googleapis/release-please-action@v4"
         with:
-          release-type: node
-      # The logic below handles the npm publication:
-      - uses: actions/checkout@v6
-        if: ${{ steps.release.outputs.release_created }}
-      - uses: actions/setup-node@v6
-        with:
-          cache: npm
-          node-version-file: .tool-versions
-          registry-url: https://registry.npmjs.org
-        if: ${{ steps.release.outputs.release_created }}
-      - run: npm ci
-        if: ${{ steps.release.outputs.release_created }}
-      - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: ${{ steps.release.outputs.release_created }}
+          config-file: ".github/release-please-config.json"
+          manifest-file: ".github/release-please-manifest.json"
+
+"on":
+  push:
+    branches:
+      - "main"
+
+name: "Release"

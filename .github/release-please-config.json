@@ -1,0 +1,17 @@
+{
+  "packages": {
+    ".": {
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "changelog-path": "CHANGELOG.md",
+      "component": "",
+      "include-component-in-tag": false,
+      "draft": false,
+      "monorepo-tags": false,
+      "package-name": "eslint-config-envylabs",
+      "prerelease": false,
+      "release-type": "node"
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}
