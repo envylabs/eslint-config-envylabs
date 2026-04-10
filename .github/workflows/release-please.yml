@@ -19,8 +19,6 @@ jobs:
       - run: "npm ci --ignore-scripts --no-audit --no-fund --no-update-notifier"
       - run: "npm run build --if-present"
       - run: "npm publish"
-        env:
-          NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}"
 
   release-please:
     name: "Release"
