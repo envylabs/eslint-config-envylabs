@@ -105,7 +105,7 @@ describe("import-x/order", () => {
   });
 });
 
-describe("sort-destructure-keys/sort-destructure-keys", () => {
+describe("perfectionist/sort-objects", () => {
   it("warns when destructured variables are not alphabetically listed", () => {
     let messages = linter.verify(
       "const obj = { foo: ({ b, a, c }) => null };\n",
@@ -115,7 +115,7 @@ describe("sort-destructure-keys/sort-destructure-keys", () => {
 
     expect(messages).toContainEqual(
       expect.objectContaining({
-        ruleId: "sort-destructure-keys/sort-destructure-keys",
+        ruleId: "perfectionist/sort-objects",
       }),
     );
 
@@ -125,7 +125,7 @@ describe("sort-destructure-keys/sort-destructure-keys", () => {
 
     expect(messages).toContainEqual(
       expect.objectContaining({
-        ruleId: "sort-destructure-keys/sort-destructure-keys",
+        ruleId: "perfectionist/sort-objects",
       }),
     );
   });
