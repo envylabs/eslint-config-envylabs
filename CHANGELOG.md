@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.3.0...v1.4.0) (2026-05-11)
+
+
+### Features
+
+* expand alphabetizing behaviors via eslint-plugin-perfectionist ([d050266](https://github.com/envylabs/eslint-config-envylabs/commit/d0502664bbe17e64f64b3afd21a16b7c8bfa15b9))
+
+
+### Bug Fixes
+
+* replace perfectionist recommended config with a custom warn-level configuration omitting import ordering ([b2572c9](https://github.com/envylabs/eslint-config-envylabs/commit/b2572c93d1562afa8227e0dbfe5146283df2a09a))
+
 ## [1.3.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.2.4...v1.3.0) (2026-05-11)
 
 
