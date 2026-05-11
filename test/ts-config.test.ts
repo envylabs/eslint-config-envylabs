@@ -166,8 +166,8 @@ describe("@typescript-eslint/switch-exhaustiveness-check", () => {
 
   async function lintFixture(filename: string) {
     const eslint = new ESLint({
-      overrideConfigFile: path.join(fixturesDir, "eslint.config.js"),
       overrideConfig: tsConfig,
+      overrideConfigFile: path.join(fixturesDir, "eslint.config.js"),
     });
     const results = await eslint.lintFiles([path.join(fixturesDir, filename)]);
 
