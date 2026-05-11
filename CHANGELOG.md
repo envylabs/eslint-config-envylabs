@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.2.4...v1.3.0) (2026-05-11)
+
+
+### Features
+
+* remove eslint-plugin-sort-keys-fix for lack of eslint 10 support ([ed5fad0](https://github.com/envylabs/eslint-config-envylabs/commit/ed5fad08ac82026130e3d2c3e7161e79079229f2))
+* sort object and destructure keys alphabetically ([6e8eb40](https://github.com/envylabs/eslint-config-envylabs/commit/6e8eb40733b018abe59b683a98426898b73d32a4))
+
 ## [1.2.4](https://github.com/envylabs/eslint-config-envylabs/compare/v1.2.3...v1.2.4) (2026-04-10)
 
 
