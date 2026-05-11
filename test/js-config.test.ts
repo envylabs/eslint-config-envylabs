@@ -12,8 +12,8 @@ const testConfig: Linter.Config[] = [
     rules: {
       "import-x/default": "off",
       "import-x/named": "off",
-      "import-x/no-unresolved": "off",
       "import-x/namespace": "off",
+      "import-x/no-unresolved": "off",
       "prettier/prettier": "off",
     },
   },
@@ -101,6 +101,32 @@ describe("import-x/order", () => {
 
     expect(messages).not.toContainEqual(
       expect.objectContaining({ ruleId: "import-x/order" }),
+    );
+  });
+});
+
+describe("sort-destructure-keys/sort-destructure-keys", () => {
+  it("warns when destructured variables are not alphabetically listed", () => {
+    let messages = linter.verify(
+      "const obj = { foo: ({ b, a, c }) => null };\n",
+      testConfig,
+      { filename: "test.js" },
+    );
+
+    expect(messages).toContainEqual(
+      expect.objectContaining({
+        ruleId: "sort-destructure-keys/sort-destructure-keys",
+      }),
+    );
+
+    messages = linter.verify("const { b, a, c } = foo;\n", testConfig, {
+      filename: "test.js",
+    });
+
+    expect(messages).toContainEqual(
+      expect.objectContaining({
+        ruleId: "sort-destructure-keys/sort-destructure-keys",
+      }),
     );
   });
 });

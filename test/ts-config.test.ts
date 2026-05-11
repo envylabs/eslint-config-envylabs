@@ -37,9 +37,10 @@ const inlineConfig: Linter.Config[] = [
     rules: {
       "import-x/default": "off",
       "import-x/named": "off",
-      "import-x/no-unresolved": "off",
       "import-x/namespace": "off",
+      "import-x/no-unresolved": "off",
       "prettier/prettier": "off",
+      "sort-destructure-keys/sort-destructure-keys": "off",
     },
   },
 ];
