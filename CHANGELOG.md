@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/envylabs/eslint-config-envylabs/compare/v1.4.0...v1.4.1) (2026-06-21)
+
+
+### Bug Fixes
+
+* add @typescript-eslint/no-import-type-side-effects at an error level ([80cfccc](https://github.com/envylabs/eslint-config-envylabs/commit/80cfccc1c0126f4a3d576423b8c77c34713f5881))
+
 ## [1.4.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.3.0...v1.4.0) (2026-05-11)
 
 
