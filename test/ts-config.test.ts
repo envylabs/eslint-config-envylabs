@@ -117,6 +117,36 @@ describe("@typescript-eslint/no-unused-vars", () => {
   });
 });
 
+describe("@typescript-eslint/no-import-type-side-effects", () => {
+  it("errors when an import contains only inline types", () => {
+    const messages = linter.verify(
+      'import { type a } from "a";\n',
+      inlineConfig,
+      { filename: "test.ts" },
+    );
+
+    expect(messages).toContainEqual(
+      expect.objectContaining({
+        ruleId: "@typescript-eslint/no-import-type-side-effects",
+      }),
+    );
+  });
+
+  it("does not error when an import contains inline types and non-types", () => {
+    const messages = linter.verify(
+      'import { type a, b } from "a";\n',
+      inlineConfig,
+      { filename: "test.ts" },
+    );
+
+    expect(messages).not.toContainEqual(
+      expect.objectContaining({
+        ruleId: "@typescript-eslint/no-import-type-side-effects",
+      }),
+    );
+  });
+});
+
 describe("@typescript-eslint/explicit-module-boundary-types", () => {
   it("errors when an exported function lacks a return type in a .ts file", () => {
     const messages = linter.verify(

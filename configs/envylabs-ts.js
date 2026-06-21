@@ -20,6 +20,7 @@ export default [
       sourceType: "module",
     },
     rules: {
+      "@typescript-eslint/no-import-type-side-effects": "error",
       "@typescript-eslint/no-require-imports": "error",
       "@typescript-eslint/no-unused-vars": [
         "warn",
