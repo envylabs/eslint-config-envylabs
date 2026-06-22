@@ -6,6 +6,10 @@ const eslintConfigEnvylabs = {
   full: fullConfig,
   js: jsConfig,
   ts: tsConfig,
-};
+} as const;
+
+type EslintConfigEnvylabs = typeof eslintConfigEnvylabs;
+
+export type { EslintConfigEnvylabs };
 
 export default eslintConfigEnvylabs;

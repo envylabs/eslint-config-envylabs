@@ -1,10 +1,10 @@
 import js from "@eslint/js";
+import { defineConfig } from "eslint/config";
 import { importX } from "eslint-plugin-import-x";
 import eslintPluginPerfectionist from "eslint-plugin-perfectionist";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+const config = defineConfig(
   js.configs.recommended,
   importX.flatConfigs.recommended,
   eslintPluginPrettierRecommended,
@@ -52,4 +52,6 @@ export default [
       "prettier/prettier": "warn",
     },
   },
-];
+);
+
+export default config;

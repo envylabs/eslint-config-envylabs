@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import fullConfig from "../configs/envylabs-full.js";
+import fullConfig from "../src/configs/envylabs-full.js";
 
 describe("envylabs-full config", () => {
   it("is a valid flat config array", () => {

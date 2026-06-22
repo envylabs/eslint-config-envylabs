@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "declaration": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "noEmit": true,
@@ -9,5 +9,5 @@
     "target": "ES2022",
     "types": ["node"]
   },
-  "include": ["test/**/*.ts"]
+  "include": ["eslint.config.ts", "src/**/*.ts", "test/**/*.ts"]
 }

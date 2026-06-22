@@ -11,7 +11,9 @@ jobs:
           node-version-file: ".tool-versions"
       - run: "npm ci --ignore-scripts --no-audit --no-fund --no-update-notifier"
       - run: "npm run lint"
+      - run: "npm run typecheck"
       - run: "npm test"
+      - run: "npm run build"
 
 name: "CI"
 

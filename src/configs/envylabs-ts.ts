@@ -1,10 +1,10 @@
+import { defineConfig } from "eslint/config";
 import { importX } from "eslint-plugin-import-x";
 import { configs as tseslintConfigs } from "typescript-eslint";
 
 import eslintPluginEnvylabs from "./envylabs-js.js";
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+const config = defineConfig(
   ...eslintPluginEnvylabs,
   ...tseslintConfigs.recommended,
   importX.flatConfigs.typescript,
@@ -56,4 +56,6 @@ export default [
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
-];
+);
+
+export default config;

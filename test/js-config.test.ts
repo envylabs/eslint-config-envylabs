@@ -1,7 +1,7 @@
 import { Linter } from "eslint";
 import { describe, expect, it } from "vitest";
 
-import jsConfig from "../configs/envylabs-js.js";
+import jsConfig from "../src/configs/envylabs-js.js";
 
 const linter = new Linter({ configType: "flat" });
 

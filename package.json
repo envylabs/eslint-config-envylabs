@@ -1,13 +1,28 @@
 {
   "name": "eslint-config-envylabs",
   "version": "1.4.1",
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix",
-    "test": "vitest run"
-  },
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepack": "npm run clean && npm run build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
   "keywords": [
     "javascript",
     "typescript",
@@ -41,6 +56,8 @@
   "devDependencies": {
     "@types/node": "^24.12.2",
     "eslint": "^10.2.0",
+    "jiti": "^2.4.2",
+    "typescript": "^6.0.0",
     "vitest": "^4.1.0"
   }
 }

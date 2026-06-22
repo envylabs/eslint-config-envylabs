@@ -1,6 +1,6 @@
 # Envy Labs ESLint configuration
 
-Opinionated linting configuration used across Envy Labs projects. Valid for JavaScript or TypeScript projects.
+Opinionated linting configuration used across Envy Labs projects. Valid for JavaScript or TypeScript projects. Ships with bundled TypeScript type declarations, so editors and `eslint.config.ts` get full type support out of the box.
 
 ## How to use
 
@@ -47,4 +47,4 @@ export default [
 - Additionally, lints TypeScript using [`@typescript-eslint/recommended`](https://typescript-eslint.io/docs/linting/configs).
 - Lints code formatting using [`eslint-plugin-prettier`](https://github.com/prettier/eslint-plugin-prettier).
 - Lints imports using [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x).
-- Uses rules inside the [configs](configs) folder.
+- Uses rules inside the [src/configs](src/configs) folder.
