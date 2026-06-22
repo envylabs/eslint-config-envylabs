@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.4.1...v1.5.0) (2026-06-22)
+
+
+### Features
+
+* move project to TypeScript and build/publish types ([9894fdb](https://github.com/envylabs/eslint-config-envylabs/commit/9894fdb0e990b2e2121106e383d4b0045b6c9638))
+
 ## [1.4.1](https://github.com/envylabs/eslint-config-envylabs/compare/v1.4.0...v1.4.1) (2026-06-21)
 
 
