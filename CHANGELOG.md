@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/envylabs/eslint-config-envylabs/compare/v1.5.0...v1.5.1) (2026-07-06)
+
+
+### Bug Fixes
+
+* remove ignores of project-specific directories (.next, .storybook, .yarn, etc) ([d2085a0](https://github.com/envylabs/eslint-config-envylabs/commit/d2085a0ebe70413e70dbb6d426acee914e9d8711))
+
 ## [1.5.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.4.1...v1.5.0) (2026-06-22)
 
 
