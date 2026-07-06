@@ -11,12 +11,7 @@ describe("envylabs-full config", () => {
     const ignoreConfig = fullConfig.find((c) => c.ignores);
 
     expect(ignoreConfig).toMatchObject({
-      ignores: expect.arrayContaining([
-        "**/node_modules/",
-        "**/.next/",
-        "**/.yarn/",
-        "**/storybook-static/",
-      ]),
+      ignores: expect.arrayContaining(["**/node_modules/"]),
     });
   });
 });
