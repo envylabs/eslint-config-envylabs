@@ -1,13 +1,35 @@
 import { defineConfig } from "eslint/config";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import { importX } from "eslint-plugin-import-x";
 import { configs as tseslintConfigs } from "typescript-eslint";
 
 import eslintPluginEnvylabs from "./envylabs-js.js";
 
+// importX.flatConfigs.typescript registers the resolver by its legacy string
+// name ("import-x/resolver": { typescript: true }), which makes
+// eslint-plugin-import-x resolve eslint-import-resolver-typescript from the
+// *consuming* project's root. That only works when npm happens to hoist the
+// resolver out of this package's node_modules, so a routine lockfile refresh in
+// a consumer can nest it and break every import-x rule with "typescript with
+// invalid interface loaded as resolver". Importing the factory here resolves it
+// relative to this package instead, so hoisting no longer matters.
+// "import-x/resolver-next" takes precedence over the legacy key, which is
+// dropped below so the stale setting can never be reached.
+const typescriptSettings: Record<string, unknown> = {
+  ...importX.flatConfigs.typescript.settings,
+};
+delete typescriptSettings["import-x/resolver"];
+
 const config = defineConfig(
   ...eslintPluginEnvylabs,
   ...tseslintConfigs.recommended,
-  importX.flatConfigs.typescript,
+  {
+    ...importX.flatConfigs.typescript,
+    settings: {
+      ...typescriptSettings,
+      "import-x/resolver-next": [createTypeScriptImportResolver()],
+    },
+  },
   {
     files: ["**/*.ts", "**/*.tsx"],
     languageOptions: {

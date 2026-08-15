@@ -16,8 +16,7 @@ const linter = new Linter({ configType: "flat" });
 const inlineConfig: Linter.Config[] = [
   ...tsConfig.map((cfg) => {
     const parserOpts = cfg.languageOptions?.parserOptions as
-      | Record<string, unknown>
-      | undefined;
+      Record<string, unknown> | undefined;
 
     if (!parserOpts?.projectService) {
       return cfg;
@@ -191,19 +190,19 @@ describe("@typescript-eslint/explicit-module-boundary-types", () => {
   });
 });
 
+const fixturesDir = path.join(__dirname, "fixtures/ts");
+
+async function lintFixture(filename: string) {
+  const eslint = new ESLint({
+    overrideConfig: tsConfig,
+    overrideConfigFile: path.join(fixturesDir, "eslint.config.js"),
+  });
+  const results = await eslint.lintFiles([path.join(fixturesDir, filename)]);
+
+  return results[0].messages;
+}
+
 describe("@typescript-eslint/switch-exhaustiveness-check", () => {
-  const fixturesDir = path.join(__dirname, "fixtures/ts");
-
-  async function lintFixture(filename: string) {
-    const eslint = new ESLint({
-      overrideConfig: tsConfig,
-      overrideConfigFile: path.join(fixturesDir, "eslint.config.js"),
-    });
-    const results = await eslint.lintFiles([path.join(fixturesDir, filename)]);
-
-    return results[0].messages;
-  }
-
   it("errors when a switch on a union type is missing a case statement", async () => {
     const messages = await lintFixture("missing-case.ts");
 
@@ -222,5 +221,26 @@ describe("@typescript-eslint/switch-exhaustiveness-check", () => {
         ruleId: "@typescript-eslint/switch-exhaustiveness-check",
       }),
     );
+  });
+});
+
+describe("import-x TypeScript resolver", () => {
+  it("registers the resolver as a function rather than by its legacy name", () => {
+    const settings = tsConfig.find(
+      (cfg) => cfg.settings?.["import-x/resolver-next"],
+    )?.settings;
+
+    expect(settings?.["import-x/resolver"]).toBeUndefined();
+    expect(settings?.["import-x/resolver-next"]).toEqual([
+      expect.objectContaining({ resolve: expect.any(Function) }),
+    ]);
+  });
+
+  it("resolves package, type-only, and relative imports without a resolve error", async () => {
+    const messages = await lintFixture("resolvable-imports.ts");
+
+    expect(
+      messages.filter((message) => message.ruleId?.startsWith("import-x/")),
+    ).toEqual([]);
   });
 });
