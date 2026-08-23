@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.5.3...v1.6.0) (2026-08-23)
+
+
+### Features
+
+* ship a shareable prettier config and warn when a project has none ([5214f76](https://github.com/envylabs/eslint-config-envylabs/commit/5214f76507969cedd3e92a36d65736690a9e1113))
+
 ## [1.5.3](https://github.com/envylabs/eslint-config-envylabs/compare/v1.5.2...v1.5.3) (2026-08-15)
 
 
