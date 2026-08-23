@@ -4,14 +4,20 @@ import { importX } from "eslint-plugin-import-x";
 import eslintPluginPerfectionist from "eslint-plugin-perfectionist";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
+import envylabsPlugin from "../rules/prettier-config-required.js";
+
 const config = defineConfig(
   js.configs.recommended,
   importX.flatConfigs.recommended,
   eslintPluginPrettierRecommended,
   {
-    plugins: { perfectionist: eslintPluginPerfectionist },
+    plugins: {
+      envylabs: envylabsPlugin,
+      perfectionist: eslintPluginPerfectionist,
+    },
     rules: {
       curly: "warn",
+      "envylabs/prettier-config-required": "warn",
       "import-x/order": [
         "warn",
         {
