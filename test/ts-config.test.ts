@@ -95,6 +95,21 @@ describe("@typescript-eslint/no-unused-vars", () => {
     );
   });
 
+  it.each(["test.mts", "test.cts"])(
+    "does not warn on variables prefixed with an underscore in %s",
+    (filename) => {
+      const messages = linter.verify("const _unused = 1;\n", inlineConfig, {
+        filename,
+      });
+
+      expect(messages).not.toContainEqual(
+        expect.objectContaining({
+          ruleId: "@typescript-eslint/no-unused-vars",
+        }),
+      );
+    },
+  );
+
   it("does not apply to .js files (rule is turned off)", () => {
     const messages = linter.verify("const unused = 1;\n", inlineConfig, {
       filename: "test.js",
@@ -131,6 +146,23 @@ describe("@typescript-eslint/no-import-type-side-effects", () => {
     );
   });
 
+  it.each(["test.mts", "test.cts"])(
+    "errors when an import contains only inline types in %s",
+    (filename) => {
+      const messages = linter.verify(
+        'import { type a } from "a";\n',
+        inlineConfig,
+        { filename },
+      );
+
+      expect(messages).toContainEqual(
+        expect.objectContaining({
+          ruleId: "@typescript-eslint/no-import-type-side-effects",
+        }),
+      );
+    },
+  );
+
   it("does not error when an import contains inline types and non-types", () => {
     const messages = linter.verify(
       'import { type a, b } from "a";\n',
@@ -160,6 +192,23 @@ describe("@typescript-eslint/explicit-module-boundary-types", () => {
       }),
     );
   });
+
+  it.each(["test.mts", "test.cts"])(
+    "errors when an exported function lacks a return type in %s",
+    (filename) => {
+      const messages = linter.verify(
+        "export function add(a, b) {\n  return a + b;\n}\n",
+        inlineConfig,
+        { filename },
+      );
+
+      expect(messages).toContainEqual(
+        expect.objectContaining({
+          ruleId: "@typescript-eslint/explicit-module-boundary-types",
+        }),
+      );
+    },
+  );
 
   it("does not error when an exported function has a return type", () => {
     const messages = linter.verify(
@@ -205,6 +254,16 @@ async function lintFixture(filename: string) {
 describe("@typescript-eslint/switch-exhaustiveness-check", () => {
   it("errors when a switch on a union type is missing a case statement", async () => {
     const messages = await lintFixture("missing-case.ts");
+
+    expect(messages).toContainEqual(
+      expect.objectContaining({
+        ruleId: "@typescript-eslint/switch-exhaustiveness-check",
+      }),
+    );
+  });
+
+  it("errors on a missing case statement in a .mts file", async () => {
+    const messages = await lintFixture("missing-case.mts");
 
     expect(messages).toContainEqual(
       expect.objectContaining({
