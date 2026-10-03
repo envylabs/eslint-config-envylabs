@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/envylabs/eslint-config-envylabs/compare/v1.6.0...v1.6.1) (2026-10-03)
+
+
+### Bug Fixes
+
+* apply the TypeScript rules to .mts and .cts files ([#148](https://github.com/envylabs/eslint-config-envylabs/issues/148)) ([b456c25](https://github.com/envylabs/eslint-config-envylabs/commit/b456c256e306ee98729e5bcc018ae4267a27bffb))
+
 ## [1.6.0](https://github.com/envylabs/eslint-config-envylabs/compare/v1.5.3...v1.6.0) (2026-08-23)
 
 
