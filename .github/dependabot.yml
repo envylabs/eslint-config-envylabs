@@ -4,10 +4,10 @@ updates:
     open-pull-requests-limit: 10
     package-ecosystem: "npm"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     versioning-strategy: "increase-if-necessary"
   - directory: "/"
     package-ecosystem: "github-actions"
     schedule:
-      interval: "daily"
+      interval: "weekly"
 version: 2
